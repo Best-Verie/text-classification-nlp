@@ -4,6 +4,13 @@ Classifying biomedical research papers into three cancer types (Thyroid, Colon, 
 
 ## Dataset
 
+
+The dataset used for this project is **too large for GitHub** (≈180MB) and is therefore **not included in this repository**.
+
+### How to obtain the dataset
+
+Download the dataset from kaggle (https://www.kaggle.com/datasets/falgunipatel19/biomedical-text-publication-classification)
+
 - **Source:** 7,570 cancer research documents from Kaggle
 - **Classes:** Thyroid Cancer (2,810), Colon Cancer (2,580), Lung Cancer (2,180)
 - **Split:** 70% train / 15% validation / 15% test (stratified)
@@ -49,9 +56,9 @@ Single-layer SimpleRNN (64 units) with dropout 0.3, built in TensorFlow/Keras. T
 
 | Embedding | Accuracy | F1-Score |
 |-----------|----------|----------|
-| **TF-IDF** | **85.46%** | **0.8542** |
-| Skip-gram | 75.53% | 0.7555 |
-| CBOW | 70.57% | 0.7007 |
+| TF-IDF| 0.97% | 0.97 |
+| Skip-gram | 0.98% | 0.98 |
+| CBOW | 0.98% | 0.98 |
 
 ### Logistic Regression
 
@@ -70,7 +77,7 @@ Multinomial Logistic Regression with GridSearchCV over regularization parameter 
 | **GRU** | **GloVe** | **98.77%** | **0.9877** |
 | LSTM | TF-IDF | 97.42% | 0.9742 |
 | Logistic Regression | TF-IDF | 97.09% | 0.97 |
-| SimpleRNN | TF-IDF | 85.46% | 0.8542 |
+| SimpleRNN | TF-IDF | 97% |97% |
 
 **Best overall model: GRU + GloVe** (F1 = 0.9877). The GRU's gating mechanism combined with GloVe's pre-trained semantic representations achieved the highest performance. Lung Cancer was the easiest class to classify across all models due to its highly distinctive vocabulary (e.g., "nsclc", "nonsmallcell"). TF-IDF consistently performed well as a baseline embedding, especially for simpler models like Logistic Regression and SimpleRNN.
 
